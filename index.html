@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#FDF6F7">
+    <meta name="color-scheme" content="light">
+    <meta name="description" content="OUR STORY — маленькая история, сделанная специально для тебя.">
+    <title>OUR STORY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-loader" aria-hidden="true">
+        <div class="loader-line"></div>
+    </div>
+
+    <div class="bg-blobs" aria-hidden="true">
+        <span class="blob"></span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+    </div>
+
+    <img class="bg-girl" id="bg-girl" src="assets/images/models/ray.png"
+         alt="" aria-hidden="true">
+
+    <main id="app">
+
+        <!-- ─── START ─────────────────────────────────────────── -->
+        <section id="screen-start" class="screen screen--active" aria-label="Начало">
+            <div class="bg-motion" id="bg-motion" aria-hidden="true">
+                <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                <span class="petal"></span><span class="petal"></span>
+            </div>
+            <div class="start-inner">
+                <p class="start-overline">for you</p>
+                <h1 class="start-title">OUR STORY</h1>
+                <p class="start-subtitle">Я сделал кое-что для тебя.</p>
+                <p class="start-hint">Не сообщение.<br>Не оправдание.<br>Просто маленькую историю.</p>
+                <button class="btn btn--primary" id="btn-start" type="button">Открыть</button>
+            </div>
+            <button class="music-toggle" id="music-toggle" type="button" aria-label="Включить или выключить музыку">
+                <span class="music-icon" aria-hidden="true">♫</span>
+                <span class="music-label">Включить музыку</span>
+            </button>
+            <span class="easter-egg" id="easter-egg" tabindex="0" role="button" aria-label="Секретный элемент">❤</span>
+        </section>
+
+        <!-- ─── STORY ─────────────────────────────────────────── -->
+        <section id="screen-story" class="screen screen--story" aria-label="Наша история">
+            <ol class="timeline" id="timeline"><!-- заполняется из APP_DATA --></ol>
+            <div class="screen-next">
+                <button class="btn btn--ghost" id="btn-story-next" type="button">Дальше</button>
+            </div>
+        </section>
+
+        <!-- ─── MEMORIES ─────────────────────────────────────── -->
+        <section id="screen-memories" class="screen screen--memories" aria-label="Воспоминания">
+            <div class="memories-top">
+                <span class="memories-counter" id="memories-counter">01 / 08</span>
+            </div>
+            <div class="memories-stage" id="memories-stage">
+                <div class="memory-card" id="memory-card" tabindex="0" role="button"
+                     aria-label="Фотография, свайпните влево или вправо, чтобы листать">
+                    <div class="memory-photo" id="memory-photo">
+                        <img id="memory-img" alt="Воспоминание">
+                        <div class="memory-photo-fallback" id="memory-fallback" aria-hidden="true">
+                            <span class="fallback-mark">✦</span>
+                            <span class="fallback-label">место для фотографии</span>
+                        </div>
+                    </div>
+                    <p class="memory-caption" id="memory-caption"></p>
+                </div>
+            </div>
+            <div class="memories-bottom">
+                <span class="memories-hint">свайп — листать</span>
+                <div class="memories-dots" id="memories-dots" aria-hidden="true"></div>
+            </div>
+            <button class="btn btn--ghost btn--continue" id="btn-memories-next" type="button">Дальше</button>
+        </section>
+
+        <!-- ─── APOLOGY ──────────────────────────────────────── -->
+        <section id="screen-apology" class="screen" aria-label="Извинение">
+            <div class="apology-inner">
+                <h2 class="apology-title">Есть кое-что важнее<br>воспоминаний.</h2>
+                <div class="apology-text" id="apology-text"><!-- заполняется из APP_DATA --></div>
+                <div class="screen-next">
+                    <button class="btn btn--ghost" id="btn-apology-next" type="button">Продолжить</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── PUZZLE ───────────────────────────────────────── -->
+        <section id="screen-puzzle" class="screen" aria-label="Загадка">
+            <div class="puzzle-inner">
+                <header class="screen-header">
+                    <h2 class="screen-title">MEMORY PUZZLE</h2>
+                    <p class="screen-subtitle">Давай проверим одну вещь.<br>Сколько наших моментов<br>ты ещё помнишь?</p>
+                </header>
+
+                <div class="puzzle-grid" id="puzzle-grid"><!-- заполняется из APP_DATA --></div>
+
+                <div class="puzzle-modal" id="puzzle-modal" hidden>
+                    <div class="puzzle-modal-card" role="dialog" aria-modal="true" aria-labelledby="puzzle-q">
+                        <button class="puzzle-close" id="puzzle-close" type="button" aria-label="Закрыть вопрос">✕</button>
+                        <div class="puzzle-q-icon" id="puzzle-q-icon" aria-hidden="true"></div>
+                        <p class="puzzle-q-text" id="puzzle-q"></p>
+                        <div class="puzzle-answers" id="puzzle-answers"><!-- заполняется из APP_DATA --></div>
+                    </div>
+                </div>
+
+                <div class="puzzle-done" id="puzzle-done" hidden>
+                    <p class="puzzle-score" id="puzzle-score">6 / 6</p>
+                    <p class="puzzle-done-text">Похоже,<br>некоторые вещи мы всё-таки<br><br>запоминаем навсегда.</p>
+                    <div class="screen-next">
+                        <button class="btn btn--ghost" id="btn-puzzle-next" type="button">Дальше</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── LETTER ───────────────────────────────────────── -->
+        <section id="screen-letter" class="screen" aria-label="Письмо">
+            <div class="letter-scroll" id="letter-scroll">
+                <div class="letter-inner">
+                    <header class="letter-header">
+                        <span class="letter-overline">для тебя</span>
+                        <h2 class="letter-title">Dear <span id="letter-name"></span>,</h2>
+                    </header>
+                    <div class="letter-body" id="letter-body"><!-- заполняется из APP_DATA --></div>
+                    <p class="letter-ps" id="letter-ps">p.s. scroll a little more</p>
+                    <div class="letter-secret" id="letter-secret">
+                        <p class="letter-secret-line">Я знал,<br>что ты дочитаешь.</p>
+                        <div class="screen-next">
+                            <button class="btn btn--ghost" id="btn-letter-next" type="button">Я дочитала</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FINAL ────────────────────────────────────────── -->
+        <section id="screen-final" class="screen" aria-label="Финал">
+            <div class="final-inner">
+                <h2 class="final-title">Теперь я хочу<br>услышать тебя.</h2>
+                <p class="final-subtitle">Не приложение.<br>Не заготовленный текст.<br>Не правильный ответ.<br><br>Просто тебя.</p>
+
+                <div class="final-options">
+                    <button class="btn btn--outline" id="btn-final-time" type="button">Мне нужно время</button>
+                    <button class="btn btn--outline" id="btn-final-talk" type="button">Я хочу поговорить</button>
+                    <button class="btn btn--heart" id="btn-final-heart" type="button" aria-label="Люблю тебя">❤</button>
+                </div>
+
+                <div class="final-option" id="final-time" hidden>
+                    <p class="final-note">Хорошо.</p>
+                    <p class="final-note">Я понимаю.</p>
+                    <p class="final-note">Я не буду тебя торопить.</p>
+                    <p class="final-note">Спасибо,<br>что дочитала всё до конца ❤</p>
+                </div>
+
+                <div class="final-option" id="final-talk" hidden>
+                    <label class="sr-only" for="talk-textarea">Твоё сообщение</label>
+                    <textarea id="talk-textarea" rows="5"
+                              placeholder="Напиши всё,&#10;что хочешь сказать мне..."></textarea>
+                    <button class="btn btn--ghost" id="btn-talk-send" type="button">Отправить</button>
+                    <p class="final-note" id="talk-sent" hidden>
+                        Я получил твоё сообщение.<br><br>Теперь приложение может закончиться.<br><br>Дальше — только мы.
+                    </p>
+                </div>
+
+                <div class="final-option" id="final-heart" hidden>
+                    <p class="final-note">Спасибо.</p>
+                    <p class="final-love" id="final-love"></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
