@@ -258,6 +258,9 @@ function initNavigation() {
 let audio = null;
 
 function initMusic() {
+    /* Трек: "Classic Love Scene" — Steve Oxen (Fesliyan Studios).
+       Royalty-free, free для некоммерческого использования.
+       https://www.fesliyanstudios.com/royalty-free-music/downloads-c/violin-music/81 */
     audio = new Audio("assets/audio/music.mp3");
     audio.loop = true;
     audio.preload = "none";
