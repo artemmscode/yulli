@@ -561,30 +561,6 @@ textarea:focus-visible,
     box-shadow: none;
 }
 
-.btn--heart {
-    width: 68px;
-    height: 68px;
-    min-height: 68px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 77, 109, 0.5);
-    background: linear-gradient(160deg, #6E1622, #2E0D12);
-    color: var(--accent);
-    animation: pulse-glow 3.2s ease-in-out infinite;
-}
-
-.btn--heart svg {
-    width: 30px;
-    height: 30px;
-}
-
-.btn--heart:hover {
-    transform: translateY(-3px) scale(1.05);
-}
-
-.btn--heart:active {
-    transform: scale(0.9);
-}
-
 .btn--continue {
     margin-top: 32px;
     width: 100%;
@@ -964,6 +940,84 @@ textarea:focus-visible,
     opacity: 1;
     visibility: visible;
     transition: opacity 0.6s ease, visibility 0s linear 0s;
+}
+
+/* ─── 8c. QUESTIONS ────────────────────────────────────────── */
+.screen--question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.question-inner {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+}
+
+.question-title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 7vw, 38px);
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text);
+    text-shadow: 0 0 28px rgba(255, 77, 109, 0.32);
+}
+
+/* ─── 8d. TIME ─────────────────────────────────────────────── */
+.screen--time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.time-inner {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+}
+
+.time-title {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 5.8vw, 32px);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text);
+    text-shadow: 0 0 26px rgba(255, 77, 109, 0.3);
+}
+
+.time-counters {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+.time-counter {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.time-value {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 12vw, 64px);
+    font-weight: 600;
+    line-height: 1;
+    color: var(--accent-secondary);
+    text-shadow: 0 0 30px rgba(255, 77, 109, 0.5);
+    font-variant-numeric: tabular-nums;
+    min-width: 2ch;
+}
+
+.time-unit {
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
 }
 
 /* ─── 9. MEMORIES ──────────────────────────────────────────── */
@@ -1470,7 +1524,9 @@ textarea:focus-visible,
     border-radius: 14px;
     border: 1px solid rgba(255, 77, 109, 0.35);
     background: rgba(67, 18, 26, 0.6);
-    font-size: 15px;
+    font-family: var(--font-display);
+    font-size: 17px;
+    line-height: 1.5;
     font-weight: 500;
     transition: transform 0.35s var(--ease-out), border-color 0.35s ease,
         background 0.35s ease;
@@ -1540,6 +1596,29 @@ textarea:focus-visible,
     font-size: 19px;
     line-height: 1.8;
     color: var(--text);
+    white-space: pre-line;
+    transition: opacity 0.6s var(--ease-smooth);
+}
+
+.puzzle-done-text.is-fading,
+#puzzle-done-next.is-fading {
+    opacity: 0;
+}
+
+#puzzle-done-next {
+    transition: opacity 0.6s var(--ease-smooth);
+}
+
+.puzzle-note {
+    margin-top: 30px;
+    animation: rise 0.8s var(--ease-out) both;
+}
+
+.puzzle-note-text {
+    font-family: var(--font-display);
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text-muted);
     white-space: pre-line;
 }
 
@@ -1640,15 +1719,6 @@ textarea:focus-visible,
     transform: translateY(0);
 }
 
-.letter-secret-line {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 21px;
-    line-height: 1.7;
-    color: var(--text);
-    text-shadow: 0 0 22px rgba(255, 77, 109, 0.3);
-}
-
 /* ─── 12. FINAL ────────────────────────────────────────────── */
 .final-inner {
     max-width: 480px;
@@ -1695,11 +1765,6 @@ textarea:focus-visible,
     max-width: 300px;
 }
 
-.final-options .btn--heart {
-    max-width: none;
-    width: 68px;
-}
-
 .final-option {
     margin-top: 44px;
     animation: rise 0.9s var(--ease-out) both;
@@ -1718,16 +1783,6 @@ textarea:focus-visible,
     font-size: 17px;
     line-height: 2;
     color: var(--text);
-}
-
-.final-love {
-    margin-top: 18px;
-    font-family: var(--font-script);
-    font-style: italic;
-    font-size: 30px;
-    line-height: 1.6;
-    color: var(--accent-secondary);
-    text-shadow: 0 0 22px rgba(255, 77, 109, 0.5);
 }
 
 #talk-textarea {
@@ -1754,27 +1809,6 @@ textarea:focus-visible,
     transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-out),
         background 0.35s var(--ease-smooth), border-color 0.35s var(--ease-smooth),
         box-shadow 0.35s var(--ease-smooth), color 0.35s var(--ease-smooth);
-}
-
-/* heart particles */
-.heart-particles {
-    position: fixed;
-    inset: 0;
-    z-index: 40;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.heart-particle {
-    position: absolute;
-    bottom: -10px;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--accent);
-    opacity: 0;
-    box-shadow: 0 0 14px 3px rgba(255, 77, 109, 0.5);
-    animation: float-up var(--dur) ease-out forwards;
 }
 
 /* ─── 13. ANIMATIONS ───────────────────────────────────────── */
@@ -1851,20 +1885,6 @@ textarea:focus-visible,
     100% {
         transform: scale(1);
         opacity: 1;
-    }
-}
-
-@keyframes float-up {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 0;
-    }
-    15% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-70vh) scale(0.35);
-        opacity: 0;
     }
 }
 

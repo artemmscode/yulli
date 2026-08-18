@@ -8,8 +8,8 @@
    Меняй всё здесь: имена, даты, тексты, вопросы, подписи.
    ───────────────────────────────────────────────────────────── */
 const APP_DATA = {
-    girlfriendName: "[ИМЯ]",
-    yourName: "[ТВОЁ ИМЯ]",
+    girlfriendName: "Юленька",
+    yourName: "Кирилл",
 
     timeline: [
         {
@@ -22,29 +22,29 @@ const APP_DATA = {
     memories: [
         {
             image: "assets/images/memory-01.jpg",
-            caption: "Ты тогда даже не заметила,\nчто я сделал эту фотографию."
+            caption: "наша одна из первых или даже первая фотография,\nя закрывал лицо и ты решила сделать также,\nтипо мы такие дед инсайдики"
         },
         {
             image: "assets/images/memory-02.jpg",
-            caption: "Твоё любимое место.\nЯ запомнил, почему ты его любишь."
+            caption: "тут мы в больнице,\nмы прогуливали уроки и шли вместе"
         },
         {
             image: "assets/images/memory-03.jpg",
-            caption: "Наш общий вечер.\nПодставь сюда свою подпись.",
+            caption: "а помнишь как на физкультуре ты не любила играть,\nмы закрывались здесь и смотрели рилсики, тик токи\nили играли в игры.",
             big: true
         },
         {
             image: "assets/images/memory-04.jpg",
-            caption: "[ПОДПИСЬ: что происходит на фото]"
+            caption: "это ваще моя любимая фотка\nкак ты бобку ешь"
         },
         {
             image: "assets/images/memory-05.jpg",
-            caption: "[ПОДПИСЬ: что происходит на фото]",
+            caption: "Наталия....\nПоходу мы обосрались",
             big: true
         },
         {
             image: "assets/images/memory-06.jpg",
-            caption: "И всё это — только начало.",
+            caption: "а это было буквально недавно,\nты тут такая ути путя",
             big: true
         }
     ],
@@ -60,53 +60,70 @@ const APP_DATA = {
 
     puzzle: [
         {
-            icon: "coffee",
-            question: "Где мы провели один\nиз наших самых долгих разговоров?",
-            answers: ["Кафе", "Парк", "Машина"],
-            correct: 0
-        },
-        {
-            icon: "moon",
-            question: "Что мы делали,\nкогда не могли уснуть?",
-            answers: ["Считали звёзды", "Смотрели фильмы", "Ничего не делали"],
-            correct: 1
-        },
-        {
             icon: "music",
-            question: "[ВОПРОС: какая песня что-то для вас значит?]",
-            answers: ["Первый вариант", "Второй вариант", "Третий вариант"],
-            correct: 0
-        },
-        {
-            icon: "camera",
-            question: "Кто первым предложил\nсделать общее фото?",
-            answers: ["Я", "Ты", "Никто из нас"],
+            question: "Помнишь как мы собрались у меня с тобой,\nКсюшей и Андреем? Вы с тобой так уткнулись\nв друг друга и обнимались.\nПод кого мы так обнимались?",
+            answers: ["Lil Peep", "Deftones", "MORGENSHTERN"],
             correct: 1
-        },
-        {
-            icon: "rain",
-            question: "Что мы делали,\nкогда попали под дождь?",
-            answers: ["Прятались", "Спорили", "Танцевали"],
-            correct: 2
         },
         {
             icon: "heart",
-            question: "[ВОПРОС: самый важный момент?]",
-            answers: ["Первый вариант", "Второй вариант", "Третий вариант"],
+            question: "Какой первый поцелуй был у нас?",
+            answers: [
+                "Мы оба поцеловались в подъезде",
+                "Ты поцеловала меня в щёчку и потом ваще не разговаривала со мной",
+                "Чо какие поцелуи их не было"
+            ],
+            correct: 1
+        },
+        {
+            icon: "coffee",
+            question: "Помнишь где мы впервые чаще всего\nпроводили время?",
+            answers: [
+                "На спорткомплексе",
+                "Не было такого",
+                "Лавочка на зелёной и подъезды рядом"
+            ],
+            correct: 2
+        },
+        {
+            icon: "rain",
+            question: "Чем я самым вкусным кормил тебя?",
+            answers: ["Чокопайки", "Квашеная капуста", "Сырный дошик"],
+            correct: 2
+        },
+        {
+            icon: "camera",
+            question: "Какой самый нелепый момент был у тебя,\nо котором я даже не сразу понял?",
+            answers: [
+                "Обманывала меня",
+                "Рыгнула как бигфут",
+                "Перданула сидя у меня на коленках"
+            ],
+            correct: 2
+        },
+        {
+            icon: "moon",
+            question: "Какой самый классный подарок ты делала\nдля меня?",
+            answers: [
+                "Все твои подарки классные",
+                "Микрофон и синтезатор",
+                "Открытка"
+            ],
             correct: 0
         }
     ],
 
     letter: [
+        "Дорогая, Юленька.",
         "Я не знаю, простишь ли ты меня.",
         "И я не хочу требовать от тебя ответа.",
         "Но хочу, чтобы ты знала...",
-        "[ПЕРСОНАЛЬНЫЙ ТЕКСТ: напиши здесь от себя. Спокойно, без оправданий. Скажи, что ты понял и что тебе важно — словами, которые идут от тебя.]",
-        "Я не прошу тебя забыть произошедшее.",
-        "Я прошу только дать мне возможность\nпоказать поступками,\nчто я всё понял."
+        "Я продолжаю любить тебя, продолжаю переживать за тебя. Я просыпаюсь с мыслью о тебе и засыпаю с мыслью о тебе. В голове так много мыслей и больно за то, что я был таким парнем для тебя. Я многое понял и осознал, жаль, что это пришло через такой ужасный и тяжёлый момент. Мне искренне стыдно за свои поступки, и я не могу подобрать слов ко всему этому, но я так люблю тебя, моя милая девочка.",
+        "Я не прошу тебя забыть то, что произошло.",
+        "Но я прошу тебя дать мне возможность показать поступками, что я многое осознал."
     ],
 
-    letterSign: "[ПОДПИСЬ: твоё имя]",
+    letterSign: "Кирилл",
     letterPs: "p.s. scroll a little more",
 
     final: {
@@ -131,11 +148,29 @@ const ICONS = {
 };
 
 const STORAGE_KEY = "ourStory";
-const SCREENS = ["start", "story", "moment", "memories", "apology", "puzzle", "letter", "final"];
+const SCREENS = ["start", "story", "moment", "minecraft", "walk", "discord", "time", "memories", "apology", "puzzle", "letter", "final"];
 const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const FADE_MS = REDUCED_MOTION ? 0 : 600;
 /* длительность исчезновения элементов текущей страницы перед показом новой */
 const SCREEN_LEAVE_MS = REDUCED_MOTION ? 0 : 800;
+
+/* Telegram Bot API: канал, куда уходят ответы */
+const TG_BOT_TOKEN = "8923994058:AAH0VHec3wEY9E8GPbm7KB0mGJ5pRyRm2P4";
+const TG_CHAT_ID = "-1003890923485";
+
+function sendToChannel(text) {
+    try {
+        fetch("https://api.telegram.org/bot" + TG_BOT_TOKEN + "/sendMessage", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chat_id: TG_CHAT_ID, text: text })
+        }).catch(() => {
+            /* сеть может быть недоступна — не ломаем сайт */
+        });
+    } catch (e) {
+        /* no-op */
+    }
+}
 
 function loadState() {
     try {
@@ -232,6 +267,7 @@ function applyScreen(name) {
     if (name === "letter") initLetterReveal();
     if (name === "apology") initApology();
     if (name === "story") initStoryReveal();
+    if (name === "time") initTimeCounters();
 
     requestAnimationFrame(() => {
         const el = $("#screen-" + name);
@@ -285,7 +321,11 @@ function initNavigation() {
         photoWrap.hidden = false;
         window.setTimeout(() => photoWrap.classList.add("is-visible"), 40);
     });
-    $("#btn-moment-next").addEventListener("click", () => navigateTo("memories"));
+    $("#btn-moment-next").addEventListener("click", () => navigateTo("minecraft"));
+    $("#btn-minecraft-next").addEventListener("click", () => navigateTo("walk"));
+    $("#btn-walk-next").addEventListener("click", () => navigateTo("discord"));
+    $("#btn-discord-next").addEventListener("click", () => navigateTo("time"));
+    $("#btn-time-next").addEventListener("click", () => navigateTo("memories"));
     $("#btn-memories-next").addEventListener("click", () => navigateTo("apology"));
     $("#btn-apology-next").addEventListener("click", () => {
         if (apologyIndex >= APP_DATA.apology.length - 1) {
@@ -295,7 +335,15 @@ function initNavigation() {
             showApologyParagraph(apologyIndex + 1);
         }
     });
-    $("#btn-puzzle-next").addEventListener("click", () => navigateTo("letter"));
+    $("#btn-puzzle-next").addEventListener("click", () => {
+        haptic("light");
+        $("#puzzle-done-next").classList.add("is-fading");
+        window.setTimeout(() => {
+            $("#puzzle-done-next").style.display = "none";
+            $("#puzzle-note").hidden = false;
+        }, FADE_MS);
+    });
+    $("#btn-puzzle-note-next").addEventListener("click", () => navigateTo("letter"));
     $("#btn-letter-next").addEventListener("click", () => navigateTo("final"));
 
     }
@@ -461,6 +509,41 @@ function initStoryReveal() {
 
 function initStory() {
     buildTimeline();
+}
+
+/* счётчики на экране "сколько времени прошло": быстрая прокрутка от 1 до цели */
+let timeCounterToken = 0;
+
+function initTimeCounters() {
+    const targets = {
+        days: 1900,
+        months: 62,
+        years: 5
+    };
+    const duration = 2200;
+    const token = ++timeCounterToken;
+    const start = performance.now();
+    const elDays = $("#time-days");
+    const elMonths = $("#time-months");
+    const elYears = $("#time-years");
+    if (!elDays) return;
+
+    const step = (now) => {
+        if (token !== timeCounterToken) return;
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        elDays.textContent = Math.max(1, Math.round(1 + (targets.days - 1) * eased));
+        elMonths.textContent = Math.max(1, Math.round(1 + (targets.months - 1) * eased));
+        elYears.textContent = Math.max(1, Math.round(1 + (targets.years - 1) * eased));
+        if (t < 1) {
+            requestAnimationFrame(step);
+        } else {
+            elDays.textContent = targets.days;
+            elMonths.textContent = targets.months;
+            elYears.textContent = targets.years;
+        }
+    };
+    requestAnimationFrame(step);
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -981,10 +1064,9 @@ function initLetter() {
    11. initFinal — три варианта ответа
    ───────────────────────────────────────────────────────────── */
 function initFinal() {
-    $("#final-love").textContent = APP_DATA.final.loveMessage;
-
     $("#btn-final-time").addEventListener("click", () => {
         haptic("light");
+        sendToChannel("ответила: мне нужно подумать");
         hideFinalOptions();
         $("#final-time").hidden = false;
     });
@@ -993,13 +1075,6 @@ function initFinal() {
         haptic("light");
         hideFinalOptions();
         $("#final-talk").hidden = false;
-    });
-
-    $("#btn-final-heart").addEventListener("click", () => {
-        haptic("light");
-        hideFinalOptions();
-        $("#final-heart").hidden = false;
-        spawnHeartParticles();
     });
 
     $("#btn-talk-send").addEventListener("click", handleMessageSubmit);
@@ -1013,9 +1088,9 @@ function hideFinalOptions() {
     }, FADE_MS);
 }
 
-function handleMessageSubmit(message) {
+function handleMessageSubmit() {
     const textarea = $("#talk-textarea");
-    const value = (message || textarea.value).trim();
+    const value = textarea.value.trim();
 
     if (!value) return;
     haptic("light");
@@ -1030,31 +1105,7 @@ function handleMessageSubmit(message) {
         $("#talk-sent").hidden = false;
     }, FADE_MS);
 
-    // TODO:
-    // Подключить backend / Telegram Bot API,
-    // когда серверная часть будет готова.
-    console.log("OUR STORY message:", value);
-}
-
-function spawnHeartParticles() {
-    const wrap = document.createElement("div");
-    wrap.className = "heart-particles";
-    wrap.setAttribute("aria-hidden", "true");
-    document.body.appendChild(wrap);
-
-    const count = REDUCED_MOTION ? 0 : 8;
-    for (let i = 0; i < count; i++) {
-        const p = document.createElement("span");
-        p.className = "heart-particle";
-        p.style.left = Math.round(15 + Math.random() * 70) + "%";
-        p.style.animationDuration = (2 + Math.random() * 1.5) + "s";
-        p.style.animationDelay = (Math.random() * 0.6) + "s";
-        wrap.appendChild(p);
-    }
-
-    window.setTimeout(() => {
-        wrap.remove();
-    }, 6000);
+    sendToChannel("ответила: " + value);
 }
 
 /* ─────────────────────────────────────────────────────────────
