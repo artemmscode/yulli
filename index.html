@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#180608">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="OUR STORY — маленькая история, сделанная специально для тебя.">
+    <title>OUR STORY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-loader" aria-hidden="true">
+        <div class="loader-line"></div>
+    </div>
+
+    <div class="bg-blobs" aria-hidden="true">
+        <span class="blob"></span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+    </div>
+
+    <div class="bg-bats" aria-hidden="true">
+        <svg class="bat bat--1" viewBox="0 0 32 32"><path d="M1 14 L4 17 L3 20 L7 19 L8 23 L11 21 L13 20 L16 24 L19 20 L21 21 L24 23 L25 19 L28 20 L29 17 L31 14 L26 11 L22 10 L19 8 L20 4 L17 8 L16 9 L15 8 L12 4 L14 8 L10 8 L6 10 L2 11 Z"/></svg>
+        <svg class="bat bat--2" viewBox="0 0 32 32"><path d="M1 14 L4 17 L3 20 L7 19 L8 23 L11 21 L13 20 L16 24 L19 20 L21 21 L24 23 L25 19 L28 20 L29 17 L31 14 L26 11 L22 10 L19 8 L20 4 L17 8 L16 9 L15 8 L12 4 L14 8 L10 8 L6 10 L2 11 Z"/></svg>
+        <svg class="bat bat--3" viewBox="0 0 32 32"><path d="M1 14 L4 17 L3 20 L7 19 L8 23 L11 21 L13 20 L16 24 L19 20 L21 21 L24 23 L25 19 L28 20 L29 17 L31 14 L26 11 L22 10 L19 8 L20 4 L17 8 L16 9 L15 8 L12 4 L14 8 L10 8 L6 10 L2 11 Z"/></svg>
+        <svg class="bat bat--4" viewBox="0 0 32 32"><path d="M1 14 L4 17 L3 20 L7 19 L8 23 L11 21 L13 20 L16 24 L19 20 L21 21 L24 23 L25 19 L28 20 L29 17 L31 14 L26 11 L22 10 L19 8 L20 4 L17 8 L16 9 L15 8 L12 4 L14 8 L10 8 L6 10 L2 11 Z"/></svg>
+        <svg class="bat bat--5" viewBox="0 0 32 32"><path d="M1 14 L4 17 L3 20 L7 19 L8 23 L11 21 L13 20 L16 24 L19 20 L21 21 L24 23 L25 19 L28 20 L29 17 L31 14 L26 11 L22 10 L19 8 L20 4 L17 8 L16 9 L15 8 L12 4 L14 8 L10 8 L6 10 L2 11 Z"/></svg>
+        <svg class="bat bat--6" viewBox="0 0 32 32"><path d="M1 14 L4 17 L3 20 L7 19 L8 23 L11 21 L13 20 L16 24 L19 20 L21 21 L24 23 L25 19 L28 20 L29 17 L31 14 L26 11 L22 10 L19 8 L20 4 L17 8 L16 9 L15 8 L12 4 L14 8 L10 8 L6 10 L2 11 Z"/></svg>
+        <svg class="bat bat--7" viewBox="0 0 32 32"><path d="M1 14 L4 17 L3 20 L7 19 L8 23 L11 21 L13 20 L16 24 L19 20 L21 21 L24 23 L25 19 L28 20 L29 17 L31 14 L26 11 L22 10 L19 8 L20 4 L17 8 L16 9 L15 8 L12 4 L14 8 L10 8 L6 10 L2 11 Z"/></svg>
+        <svg class="moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="sparkle sparkle--1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.5 5.6 4.1 9.2 9.7 9.7-5.6.5-9.2 4.1-9.7 9.7-.5-5.6-4.1-9.2-9.7-9.7C7.9 11.2 11.5 7.6 12 2z"/></svg></span>
+        <span class="sparkle sparkle--2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.5 5.6 4.1 9.2 9.7 9.7-5.6.5-9.2 4.1-9.7 9.7-.5-5.6-4.1-9.2-9.7-9.7C7.9 11.2 11.5 7.6 12 2z"/></svg></span>
+        <span class="sparkle sparkle--3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.5 5.6 4.1 9.2 9.7 9.7-5.6.5-9.2 4.1-9.7 9.7-.5-5.6-4.1-9.2-9.7-9.7C7.9 11.2 11.5 7.6 12 2z"/></svg></span>
+        <span class="sparkle sparkle--4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.5 5.6 4.1 9.2 9.7 9.7-5.6.5-9.2 4.1-9.7 9.7-.5-5.6-4.1-9.2-9.7-9.7C7.9 11.2 11.5 7.6 12 2z"/></svg></span>
+    </div>
+
+    <img class="bg-girl" id="bg-girl" src="assets/images/models/ray.png"
+         alt="" aria-hidden="true">
+
+    <main id="app">
+
+        <!-- ─── START ─────────────────────────────────────────── -->
+        <section id="screen-start" class="screen screen--active" aria-label="Начало">
+            <div class="bg-motion" id="bg-motion" aria-hidden="true">
+                <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+                <span class="petal"></span><span class="petal"></span>
+            </div>
+            <div class="start-inner">
+                <p class="start-overline">for you</p>
+                <h1 class="start-title">OUR STORY</h1>
+                <p class="start-subtitle">Я сделал кое-что для тебя.</p>
+                <p class="start-hint">Не сообщение.<br>Не оправдание.<br>Просто маленькую историю.</p>
+                <button class="btn btn--primary" id="btn-start" type="button">Открыть</button>
+            </div>
+            <span class="easter-egg" id="easter-egg" tabindex="0" role="button" aria-label="Секретный элемент"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5C7 16.5 3.5 13 3.5 9.5 3.5 7 5.6 5 8.2 5c1.6 0 3 .8 3.8 2 .8-1.2 2.2-2 3.8-2 2.6 0 4.7 2 4.7 4.5 0 3.5-3.5 7-8.5 11z"/></svg></span>
+        </section>
+
+        <button class="music-toggle" id="music-toggle" type="button" aria-label="Включить или выключить музыку">
+            <span class="music-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h3l4-3.5v13L8 15H5z"/><path d="M16 9.5a4 4 0 0 1 0 5"/><path d="M18.5 7a7.5 7.5 0 0 1 0 10"/></svg></span>
+        </button>
+
+        <!-- ─── STORY ─────────────────────────────────────────── -->
+        <section id="screen-story" class="screen screen--story" aria-label="Наша история">
+            <ol class="timeline" id="timeline"><!-- заполняется из APP_DATA --></ol>
+            <div class="screen-next">
+                <button class="btn btn--ghost" id="btn-story-next" type="button">Дальше</button>
+            </div>
+        </section>
+
+        <!-- ─── MOMENT ────────────────────────────────────────── -->
+        <section id="screen-moment" class="screen screen--moment" aria-label="Тот самый момент">
+            <div class="moment-inner">
+                <div class="moment-question" id="moment-question">
+                    <h2 class="moment-title">А точно ли здесь?</h2>
+                    <img class="moment-character" src="assets/images/models/sun.png" alt="" aria-hidden="true">
+                    <div class="screen-next">
+                        <button class="btn btn--primary" id="btn-moment-show" type="button">Смотреть</button>
+                    </div>
+                </div>
+                <div class="moment-photo-wrap" id="moment-photo-wrap" hidden>
+                    <div class="timeline-photo-frame">
+                        <img class="timeline-photo is-loaded" id="moment-photo" src="assets/images/screen-03.jpg" alt="Фотография">
+                    </div>
+                    <p class="moment-caption">Я ведь знал, что это ты и в тот момент как бешеный носился по комнате</p>
+                    <div class="screen-next">
+                        <button class="btn btn--ghost" id="btn-moment-next" type="button">Дальше</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── QUESTIONS ────────────────────────────────────── -->
+        <section id="screen-minecraft" class="screen screen--question" aria-label="Домик в майнкрафте">
+            <div class="question-inner">
+                <h2 class="question-title">А помнишь наш домик в майнкрафте?</h2>
+                <div class="screen-next">
+                    <button class="btn btn--ghost" id="btn-minecraft-next" type="button">Читать далее</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="screen-walk" class="screen screen--question" aria-label="Прогулки">
+            <div class="question-inner">
+                <h2 class="question-title">Помнишь как мы гуляли, разговаривая по телефону?</h2>
+                <div class="screen-next">
+                    <button class="btn btn--ghost" id="btn-walk-next" type="button">Читать далее</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="screen-discord" class="screen screen--question" aria-label="Дискорд">
+            <div class="question-inner">
+                <h2 class="question-title">Или как сидели в дискорде и болтали там?</h2>
+                <div class="screen-next">
+                    <button class="btn btn--ghost" id="btn-discord-next" type="button">Читать далее</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="screen-time" class="screen screen--time" aria-label="Время вместе">
+            <div class="time-inner">
+                <h2 class="time-title">Между началом нашего общения<br>и сегодняшним днём прошло:</h2>
+                <div class="time-counters" id="time-counters">
+                    <div class="time-counter">
+                        <span class="time-value" id="time-days">0</span>
+                        <span class="time-unit">дней</span>
+                    </div>
+                    <div class="time-counter">
+                        <span class="time-value" id="time-months">0</span>
+                        <span class="time-unit">месяца</span>
+                    </div>
+                    <div class="time-counter">
+                        <span class="time-value" id="time-years">0</span>
+                        <span class="time-unit">лет</span>
+                    </div>
+                </div>
+                <div class="screen-next">
+                    <button class="btn btn--ghost" id="btn-time-next" type="button">Читать далее</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── MEMORIES ─────────────────────────────────────── -->
+        <section id="screen-memories" class="screen screen--memories" aria-label="Воспоминания">
+            <div class="memories-top">
+                <span class="memories-counter" id="memories-counter">01 / 08</span>
+            </div>
+            <div class="memories-stage" id="memories-stage">
+                <div class="memory-card" id="memory-card" tabindex="0" role="button"
+                     aria-label="Фотография, свайпните влево или вправо, чтобы листать">
+                    <div class="memory-photo" id="memory-photo">
+                        <img id="memory-img" alt="Воспоминание">
+                        <div class="memory-photo-fallback" id="memory-fallback" aria-hidden="true">
+                            <span class="fallback-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.5 5.5 4 9 9 9.5-5 .5-8.5 4-9 9-.5-5-4-8.5-9-9 5-.5 8.5-4 9-9.5z"/></svg></span>
+                            <span class="fallback-label">место для фотографии</span>
+                        </div>
+                    </div>
+                    <p class="memory-caption" id="memory-caption"></p>
+                </div>
+            </div>
+            <div class="memories-bottom">
+                <span class="memories-hint">свайп — листать</span>
+                <div class="memories-dots" id="memories-dots" aria-hidden="true"></div>
+            </div>
+            <button class="btn btn--ghost btn--continue" id="btn-memories-next" type="button">Дальше</button>
+        </section>
+
+        <!-- ─── APOLOGY ──────────────────────────────────────── -->
+        <section id="screen-apology" class="screen" aria-label="Извинение">
+            <div class="apology-inner">
+                <div class="apology-text" id="apology-text"><!-- заполняется из APP_DATA --></div>
+                <div class="screen-next">
+                    <button class="btn btn--ghost" id="btn-apology-next" type="button">Продолжить</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── PUZZLE ───────────────────────────────────────── -->
+        <section id="screen-puzzle" class="screen" aria-label="Загадка">
+            <div class="puzzle-inner">
+                <header class="screen-header">
+                    <h2 class="screen-title">MEMORY PUZZLE</h2>
+                    <p class="screen-subtitle">Давай проверим одну вещь.<br>Сколько наших моментов<br>ты ещё помнишь?</p>
+                </header>
+
+                <div class="puzzle-grid" id="puzzle-grid"><!-- заполняется из APP_DATA --></div>
+
+                <div class="puzzle-modal" id="puzzle-modal" hidden>
+                    <div class="puzzle-modal-card" role="dialog" aria-modal="true" aria-labelledby="puzzle-q">
+                        <button class="puzzle-close" id="puzzle-close" type="button" aria-label="Закрыть вопрос"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+                        <div class="puzzle-q-icon" id="puzzle-q-icon" aria-hidden="true"></div>
+                        <p class="puzzle-q-text" id="puzzle-q"></p>
+                        <div class="puzzle-answers" id="puzzle-answers"><!-- заполняется из APP_DATA --></div>
+                    </div>
+                </div>
+
+                <div class="puzzle-done" id="puzzle-done" hidden>
+                    <p class="puzzle-score" id="puzzle-score">6 / 6</p>
+                    <p class="puzzle-done-text" id="puzzle-done-text">Похоже,<br>некоторые вещи мы всё-таки<br>запоминаем навсегда.</p>
+                    <div class="puzzle-note" id="puzzle-note" hidden>
+                        <p class="puzzle-note-text">Но смысл Memory Puzzle - не в том,<br>чтобы запомнить лишь то, что было.<br>Я хочу, чтобы у нас было больше воспоминаний,<br>больше развлечений, больше наших мест,<br>нашей еды, нашей музыки...<br><br>Я хочу, чтобы у нас с тобой<br>было много общего.</p>
+                        <div class="screen-next">
+                            <button class="btn btn--ghost" id="btn-puzzle-note-next" type="button">Читать далее</button>
+                        </div>
+                    </div>
+                    <div class="screen-next" id="puzzle-done-next">
+                        <button class="btn btn--ghost" id="btn-puzzle-next" type="button">Дальше</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── LETTER ───────────────────────────────────────── -->
+        <section id="screen-letter" class="screen" aria-label="Письмо">
+            <div class="letter-scroll" id="letter-scroll">
+                <div class="letter-inner">
+                    <header class="letter-header">
+                        <span class="letter-overline">для тебя</span>
+                        <h2 class="letter-title">Dear <span id="letter-name"></span>,</h2>
+                    </header>
+                    <div class="letter-body" id="letter-body"><!-- заполняется из APP_DATA --></div>
+                    <p class="letter-ps" id="letter-ps">p.s. scroll a little more</p>
+                    <div class="letter-secret" id="letter-secret">
+                        <div class="screen-next">
+                            <button class="btn btn--ghost" id="btn-letter-next" type="button">Дальше</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FINAL ────────────────────────────────────────── -->
+        <section id="screen-final" class="screen" aria-label="Финал">
+            <div class="final-inner">
+                <h2 class="final-title">Теперь я хочу<br>услышать тебя.</h2>
+                <p class="final-subtitle">Не приложение.<br>Не заготовленный текст.<br>Не правильный ответ.<br><br>Просто тебя.</p>
+
+                <div class="final-options">
+                    <button class="btn btn--outline" id="btn-final-time" type="button">Мне нужно время</button>
+                    <button class="btn btn--outline" id="btn-final-talk" type="button">Я хочу поговорить</button>
+                </div>
+
+                <div class="final-option" id="final-time" hidden>
+                    <p class="final-note">Хорошо.</p>
+                    <p class="final-note">Я понимаю.</p>
+                    <p class="final-note">Я не буду тебя торопить.</p>
+                    <p class="final-note">Спасибо,<br>что дочитала всё до конца ❤</p>
+                </div>
+
+                <div class="final-option" id="final-talk" hidden>
+                    <label class="sr-only" for="talk-textarea">Твоё сообщение</label>
+                    <textarea id="talk-textarea" rows="5"
+                              placeholder="Напиши всё,&#10;что хочешь сказать мне..."></textarea>
+                    <button class="btn btn--ghost" id="btn-talk-send" type="button">Отправить</button>
+                    <p class="final-note" id="talk-sent" hidden>
+                        Я получил твоё сообщение.<br><br>Теперь приложение может закончиться.<br><br>Дальше — только мы.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
