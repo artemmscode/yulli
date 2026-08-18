@@ -13,7 +13,7 @@ const APP_DATA = {
 
     timeline: [
         {
-            image: "assets/images/memory-02.jpg",
+            image: "assets/images/screen-02.jpg",
             date: "26.01.2024",
             title: "тот самый день, когда официально всё началось."
         }
@@ -60,37 +60,37 @@ const APP_DATA = {
 
     puzzle: [
         {
-            icon: "☕",
+            icon: "coffee",
             question: "Где мы провели один\nиз наших самых долгих разговоров?",
             answers: ["Кафе", "Парк", "Машина"],
             correct: 0
         },
         {
-            icon: "🌙",
+            icon: "moon",
             question: "Что мы делали,\nкогда не могли уснуть?",
             answers: ["Считали звёзды", "Смотрели фильмы", "Ничего не делали"],
             correct: 1
         },
         {
-            icon: "🎵",
+            icon: "music",
             question: "[ВОПРОС: какая песня что-то для вас значит?]",
             answers: ["Первый вариант", "Второй вариант", "Третий вариант"],
             correct: 0
         },
         {
-            icon: "📸",
+            icon: "camera",
             question: "Кто первым предложил\nсделать общее фото?",
             answers: ["Я", "Ты", "Никто из нас"],
             correct: 1
         },
         {
-            icon: "🌧",
+            icon: "rain",
             question: "Что мы делали,\nкогда попали под дождь?",
             answers: ["Прятались", "Спорили", "Танцевали"],
             correct: 2
         },
         {
-            icon: "❤️",
+            icon: "heart",
             question: "[ВОПРОС: самый важный момент?]",
             answers: ["Первый вариант", "Второй вариант", "Третий вариант"],
             correct: 0
@@ -119,9 +119,23 @@ const APP_DATA = {
    ───────────────────────────────────────────────────────────── */
 const $ = (sel) => document.querySelector(sel);
 
+const ICONS = {
+    coffee: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 10h11a2.6 2.6 0 0 1 0 5.2H5z"/><path d="M6.5 15.2v1.6a2.4 2.4 0 0 0 2.4 2.4h2.2a2.4 2.4 0 0 0 2.4-2.4v-1.6"/><path d="M16.6 11.2a1.8 1.8 0 0 1 0 2.8"/><path d="M7.6 8.6c-.7-.7.1-1.6 0-2.8"/><path d="M11 8.6c-.7-.7.1-1.6 0-2.8"/></svg>',
+    moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.6A8.6 8.6 0 1 1 9.4 4a7.1 7.1 0 0 0 10.6 10.6z"/><path d="M16.2 5.6l.9 1.9 1.9.9-1.9.9-.9 1.9-.9-1.9-1.9-.9 1.9-.9z"/><path d="M6.4 14.4l.7 1.5 1.5.7-1.5.7-.7 1.5-.7-1.5-1.5-.7 1.5-.7z"/></svg>',
+    music: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18.6V5.8l9-1.8v12.8"/><circle cx="6.4" cy="18.6" r="2.6"/><circle cx="15.4" cy="16.8" r="2.6"/><path d="M9 6.2l9-1.8"/></svg>',
+    camera: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8.6h2.6l1.6-2.6h7.6l1.6 2.6H20a1 1 0 0 1 1 1v8.4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.6a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.4" r="3.2"/><path d="M17.6 7V5.8"/></svg>',
+    rain: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.8 15.6a4.4 4.4 0 0 1-.8-8.7A5.8 5.8 0 0 1 17.4 8a3.8 3.8 0 0 1-.6 7.6z"/><path d="M8.6 18.4l-1.1 2"/><path d="M12.4 18.4l-1.1 2"/><path d="M16.2 18.4l-1.1 2"/></svg>',
+    heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.4C7.4 16.6 4 13.4 4 10.1 4 7.6 6 5.6 8.4 5.6c1.6 0 3 .9 3.6 2.1.6-1.2 2-2.1 3.6-2.1 2.4 0 4.4 2 4.4 4.5 0 3.3-3.4 6.5-8 10.3z"/></svg>',
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.4l4.4 4.4L19 7"/></svg>',
+    sparkle: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c.5 5.6 4.1 9.2 9.7 9.7-5.6.5-9.2 4.1-9.7 9.7-.5-5.6-4.1-9.2-9.7-9.7C7.9 11.2 11.5 7.6 12 2z"/></svg>'
+};
+
 const STORAGE_KEY = "ourStory";
-const SCREENS = ["start", "story", "memories", "apology", "puzzle", "letter", "final"];
+const SCREENS = ["start", "story", "moment", "memories", "apology", "puzzle", "letter", "final"];
 const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const FADE_MS = REDUCED_MOTION ? 0 : 600;
+/* длительность исчезновения элементов текущей страницы перед показом новой */
+const SCREEN_LEAVE_MS = REDUCED_MOTION ? 0 : 800;
 
 function loadState() {
     try {
@@ -186,19 +200,17 @@ const navBack = () => {
     navigateTo(history[history.length - 1], false);
 };
 
-function navigateTo(name, push = true) {
-    if (!SCREENS.includes(name)) name = "start";
+let navigationToken = 0;
 
-    if (push && history[history.length - 1] !== name) {
-        history.push(name);
-    }
-
-    state.currentStage = name;
-    saveState();
-
+function applyScreen(name) {
     const screens = document.querySelectorAll(".screen");
-    screens.forEach((s) => s.classList.remove("screen--active"));
-    $("#screen-" + name).classList.add("screen--active");
+    screens.forEach((s) => {
+        s.classList.remove("screen--active", "screen--leaving");
+        s.classList.add("screen--exited");
+    });
+    const target = $("#screen-" + name);
+    target.classList.remove("screen--exited");
+    target.classList.add("screen--active");
 
     const scroller = name === "letter" ? $("#letter-scroll") : $("#screen-" + name);
     if (scroller) scroller.scrollTop = 0;
@@ -227,6 +239,33 @@ function navigateTo(name, push = true) {
     });
 }
 
+function navigateTo(name, push = true) {
+    if (!SCREENS.includes(name)) name = "start";
+
+    if (push && history[history.length - 1] !== name) {
+        history.push(name);
+    }
+
+    state.currentStage = name;
+    saveState();
+
+    const token = ++navigationToken;
+    const current = document.querySelector(".screen--active");
+    const target = $("#screen-" + name);
+
+    if (!current || current === target) {
+        applyScreen(name);
+        return;
+    }
+
+    /* фаза 1: элементы текущей страницы плавно исчезают */
+    current.classList.add("screen--leaving");
+    window.setTimeout(() => {
+        if (token !== navigationToken) return;
+        applyScreen(name);
+    }, SCREEN_LEAVE_MS);
+}
+
 function initNavigation() {
     if (tg && tg.BackButton) {
         try {
@@ -237,7 +276,16 @@ function initNavigation() {
     }
 
     $("#btn-start").addEventListener("click", () => navigateTo("story"));
-    $("#btn-story-next").addEventListener("click", () => navigateTo("memories"));
+    $("#btn-story-next").addEventListener("click", () => navigateTo("moment"));
+    $("#btn-moment-show").addEventListener("click", () => {
+        haptic("light");
+        const question = $("#moment-question");
+        const photoWrap = $("#moment-photo-wrap");
+        question.classList.add("moment-question--hidden");
+        photoWrap.hidden = false;
+        window.setTimeout(() => photoWrap.classList.add("is-visible"), 40);
+    });
+    $("#btn-moment-next").addEventListener("click", () => navigateTo("memories"));
     $("#btn-memories-next").addEventListener("click", () => navigateTo("apology"));
     $("#btn-apology-next").addEventListener("click", () => {
         if (apologyIndex >= APP_DATA.apology.length - 1) {
@@ -262,15 +310,24 @@ function initMusic() {
        Royalty-free, free для некоммерческого использования.
        https://www.fesliyanstudios.com/royalty-free-music/downloads-c/violin-music/81 */
     audio = new Audio("assets/audio/music.mp3");
-    audio.loop = true;
     audio.preload = "none";
+    audio.addEventListener("ended", () => {
+        if (state.musicEnabled && !state.musicMuted) {
+            audio.currentTime = 0;
+            audio.play().catch(() => {
+                /* no-op */
+            });
+        }
+    });
 
     const btn = $("#music-toggle");
-    const label = btn.querySelector(".music-label");
 
     const paint = () => {
         btn.classList.toggle("is-on", state.musicEnabled);
-        label.textContent = state.musicEnabled ? "Выключить музыку" : "Включить музыку";
+        btn.setAttribute(
+            "aria-label",
+            state.musicEnabled ? "Выключить музыку" : "Включить музыку"
+        );
     };
 
     const play = () => {
@@ -341,19 +398,20 @@ function buildTimeline() {
             const fallback = document.createElement("div");
             fallback.className = "timeline-photo-fallback";
             fallback.setAttribute("aria-hidden", "true");
-            fallback.textContent = "✦";
+            fallback.innerHTML = ICONS.sparkle;
+            fallback.classList.add("is-visible");
 
             frame.append(photo, fallback);
             li.appendChild(frame);
 
             photo.onload = () => {
-                fallback.style.display = "none";
+                fallback.classList.remove("is-visible");
                 frame.classList.remove("timeline-photo-fallback-active");
                 photo.classList.add("is-loaded");
             };
             photo.onerror = () => {
                 photo.style.display = "none";
-                fallback.style.display = "flex";
+                fallback.classList.add("is-visible");
                 frame.classList.add("timeline-photo-fallback-active");
             };
             photo.src = item.image;
@@ -412,6 +470,7 @@ const memories = {
     index: 0,
     total: 0,
     card: null,
+    frame: null,
     img: null,
     fallback: null,
     caption: null,
@@ -428,10 +487,23 @@ function memorySrc(i) {
 
 function showFallback(visible) {
     if (!memories.fallback) return;
-    memories.fallback.style.display = visible ? "flex" : "none";
+    memories.fallback.classList.toggle("is-visible", visible);
     if (memories.img) {
         memories.img.style.opacity = visible ? "0" : "";
     }
+}
+
+let memorySwapSeq = 0;
+
+function memoryIsBig(index) {
+    return !!(APP_DATA.memories[index] && APP_DATA.memories[index].big);
+}
+
+/* пропорции рамок: 16:9 остаются, 9:16 подрезаются до 3:4 */
+const MEMORY_RATIOS = ["16 / 9", "3 / 4", "3 / 4", "16 / 9", "3 / 4", "3 / 4"];
+
+function memoryRatio(index) {
+    return (MEMORY_RATIOS[index] || "3 / 4");
 }
 
 function loadMemoryImage(index, animate) {
@@ -444,44 +516,61 @@ function loadMemoryImage(index, animate) {
         String(index + 1).padStart(2, "0") + " / " + String(memories.total).padStart(2, "0");
 
     memories.dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
-    memories.card.classList.toggle(
-        "memory-card--big",
-        !!(APP_DATA.memories[index] && APP_DATA.memories[index].big)
-    );
+
+    memories.frame.style.aspectRatio = memoryRatio(index);
+    memories.frame.classList.toggle("memory-photo--portrait", memoryRatio(index) !== "16 / 9");
 
     if (!src) {
+        memories.card.classList.toggle("memory-card--big", memoryIsBig(index));
         showFallback(true);
         img.removeAttribute("src");
+        memories.frame.classList.remove("is-fading");
         return;
     }
 
-    const fadeOut = () => {
-        if (animate) {
-            img.classList.add("is-exiting");
-            img.classList.remove("is-visible");
-        }
-        window.setTimeout(() => {
-            img.classList.remove("is-exiting", "is-entering", "is-visible");
-            img.classList.add("is-loading");
-            img.src = src;
-            img.onload = () => {
-                showFallback(false);
-                img.classList.remove("is-loading");
-                img.classList.add("is-entering");
-                void img.offsetWidth;
-                img.classList.remove("is-entering");
-                img.classList.add("is-visible");
+    const seq = ++memorySwapSeq;
+    const frame = memories.frame;
+
+    const swap = () => {
+        if (seq !== memorySwapSeq) return;
+        /* рамка уже невидима — форму меняем здесь, чтобы не было скачка при видимой фотке */
+        memories.card.classList.toggle("memory-card--big", memoryIsBig(index));
+        img.classList.remove("is-exiting", "is-entering", "is-visible");
+        img.classList.add("is-loading");
+        img.src = src;
+        img.onload = () => {
+            if (seq !== memorySwapSeq) return;
+            showFallback(false);
+            img.classList.remove("is-loading");
+            img.classList.add("is-entering");
+            void img.offsetWidth;
+            img.classList.remove("is-entering");
+            img.classList.add("is-visible");
+            /* короткая пауза с пустым экраном, затем кадр плавно проявляется */
+            window.setTimeout(() => {
+                if (seq !== memorySwapSeq) return;
+                frame.classList.remove("is-fading");
                 preloadNext();
-            };
-            img.onerror = () => {
-                img.classList.remove("is-entering", "is-visible");
-                img.removeAttribute("src");
-                showFallback(true);
-            };
-        }, animate ? 200 : 0);
+            }, 250);
+        };
+        img.onerror = () => {
+            if (seq !== memorySwapSeq) return;
+            img.classList.remove("is-entering", "is-visible");
+            img.removeAttribute("src");
+            frame.classList.remove("is-fading");
+            showFallback(true);
+        };
     };
 
-    fadeOut();
+    if (animate) {
+        frame.classList.add("is-fading");
+        /* ждём, пока рамка полностью растворится, затем скрыто подгружаем новую */
+        window.setTimeout(swap, 560);
+    } else {
+        frame.classList.remove("is-fading");
+        memories.card.classList.toggle("memory-card--big", memoryIsBig(index));
+        swap();
+    }
 }
 
 function preloadNext() {
@@ -494,7 +583,7 @@ function preloadNext() {
 }
 
 function snapBack() {
-    memories.card.style.transition = "transform 0.25s var(--ease-out)";
+    memories.card.style.transition = "transform 0.45s var(--ease-out)";
     memories.card.style.transform = "translateX(0)";
 }
 
@@ -599,6 +688,7 @@ function initMemoriesRender() {
 
 function initMemories() {
     memories.card = $("#memory-card");
+    memories.frame = $("#memory-photo");
     memories.img = $("#memory-img");
     memories.fallback = $("#memory-fallback");
     memories.caption = $("#memory-caption");
@@ -629,11 +719,12 @@ function buildApology() {
         const p = document.createElement("p");
         p.className = "apology-paragraph";
         p.textContent = text;
-        p.style.fontSize = "16px";
-        p.style.lineHeight = "1.85";
-        p.style.color = "rgba(59,42,50,0.9)";
+        p.style.fontSize = "18px";
+        p.style.lineHeight = "1.9";
+        p.style.fontFamily = "var(--font-display)";
+        p.style.color = "rgba(251,231,240,0.95)";
         p.style.opacity = "0";
-        p.style.transition = "opacity 0.35s ease";
+        p.style.transition = "opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out)";
         p.style.display = "none";
         box.appendChild(p);
     });
@@ -645,6 +736,8 @@ function showApologyParagraph(index, initial) {
 
     if (initial || index === apologyIndex) {
         ps[index].style.display = "block";
+        ps[index].style.opacity = "0";
+        void ps[index].offsetWidth;
         ps[index].style.opacity = "1";
         apologyIndex = index;
         updateApologyButton();
@@ -663,7 +756,7 @@ function showApologyParagraph(index, initial) {
         next.style.opacity = "0";
         void next.offsetWidth;
         next.style.opacity = "1";
-    }, 350);
+    }, 500);
 
     apologyIndex = index;
     updateApologyButton();
@@ -688,6 +781,7 @@ const puzzle = {
     current: -1,
     answered: 0
 };
+let modalHideTimer = null;
 
 function puzzleCardTemplate(icon, index) {
     const card = document.createElement("button");
@@ -697,12 +791,14 @@ function puzzleCardTemplate(icon, index) {
     card.setAttribute("aria-label", "Вопрос " + (index + 1));
 
     const span = document.createElement("span");
-    span.textContent = icon;
+    span.className = "puzzle-card-icon";
+    span.setAttribute("aria-hidden", "true");
+    span.innerHTML = ICONS[icon] || "";
 
     const check = document.createElement("span");
     check.className = "puzzle-check";
     check.setAttribute("aria-hidden", "true");
-    check.textContent = "✓";
+    check.innerHTML = ICONS.check;
 
     card.append(span, check);
     return card;
@@ -734,7 +830,7 @@ function openPuzzleQuestion(index) {
     puzzle.current = index;
     const q = APP_DATA.puzzle[index];
 
-    $("#puzzle-q-icon").textContent = q.icon;
+    $("#puzzle-q-icon").innerHTML = ICONS[q.icon] || "";
     $("#puzzle-q").textContent = q.question;
 
     const answers = $("#puzzle-answers");
@@ -749,12 +845,20 @@ function openPuzzleQuestion(index) {
         answers.appendChild(btn);
     });
 
-    $("#puzzle-modal").hidden = false;
+    const modal = $("#puzzle-modal");
+    window.clearTimeout(modalHideTimer);
+    modal.hidden = false;
+    requestAnimationFrame(() => modal.classList.add("is-open"));
     haptic("light");
 }
 
 function closePuzzleQuestion() {
-    $("#puzzle-modal").hidden = true;
+    const modal = $("#puzzle-modal");
+    modal.classList.remove("is-open");
+    window.clearTimeout(modalHideTimer);
+    modalHideTimer = window.setTimeout(() => {
+        modal.hidden = true;
+    }, FADE_MS);
     puzzle.current = -1;
 }
 
@@ -773,7 +877,7 @@ function answerPuzzle(answerIndex) {
         window.setTimeout(() => {
             closePuzzleQuestion();
             revealPuzzleCard(doneIndex);
-        }, 450);
+        }, 500);
     } else {
         haptic("medium");
         btns[answerIndex].classList.add("is-wrong");
@@ -782,7 +886,7 @@ function answerPuzzle(answerIndex) {
                 b.disabled = false;
                 b.classList.remove("is-wrong");
             });
-        }, 600);
+        }, 700);
     }
 }
 
@@ -798,12 +902,22 @@ function revealPuzzleCard(index) {
 function checkPuzzleDone() {
     const total = APP_DATA.puzzle.length;
     const done = state.puzzleProgress.length;
-    if (done === total) {
-        $("#puzzle-score").textContent = done + " / " + total;
+    if (done !== total) return;
+
+    $("#puzzle-score").textContent = done + " / " + total;
+    const grid = $("#puzzle-grid");
+
+    if (grid.style.display === "none") {
         $("#puzzle-done").hidden = false;
-        const grid = $("#puzzle-grid");
-        grid.style.display = "none";
+        return;
     }
+
+    grid.classList.add("is-fading");
+    window.setTimeout(() => {
+        grid.style.display = "none";
+        grid.classList.remove("is-fading");
+        $("#puzzle-done").hidden = false;
+    }, FADE_MS);
 }
 
 function initPuzzle() {
@@ -892,7 +1006,11 @@ function initFinal() {
 }
 
 function hideFinalOptions() {
-    document.querySelector(".final-options").style.display = "none";
+    const opts = document.querySelector(".final-options");
+    opts.classList.add("is-fading");
+    window.setTimeout(() => {
+        opts.style.display = "none";
+    }, FADE_MS);
 }
 
 function handleMessageSubmit(message) {
@@ -901,10 +1019,16 @@ function handleMessageSubmit(message) {
 
     if (!value) return;
     haptic("light");
-    textarea.style.display = "none";
     const sendBtn = $("#btn-talk-send");
-    sendBtn.style.display = "none";
-    $("#talk-sent").hidden = false;
+    [textarea, sendBtn].forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(8px)";
+    });
+    window.setTimeout(() => {
+        textarea.style.display = "none";
+        sendBtn.style.display = "none";
+        $("#talk-sent").hidden = false;
+    }, FADE_MS);
 
     // TODO:
     // Подключить backend / Telegram Bot API,
@@ -952,15 +1076,20 @@ function showEggMessage(lines) {
         p.style.fontSize = "17px";
         p.style.lineHeight = "1.8";
         p.style.marginBottom = "12px";
+        p.style.color = "#FBE7F0";
         p.textContent = line;
         card.appendChild(p);
     });
 
     overlay.appendChild(card);
     document.body.appendChild(overlay);
+    overlay.classList.add("is-open");
     haptic("light");
 
-    window.setTimeout(() => overlay.remove(), REDUCED_MOTION ? 1200 : 3200);
+    window.setTimeout(() => {
+        overlay.classList.remove("is-open");
+        window.setTimeout(() => overlay.remove(), FADE_MS);
+    }, REDUCED_MOTION ? 1200 : 3200);
 }
 
 function initEasterEgg() {
